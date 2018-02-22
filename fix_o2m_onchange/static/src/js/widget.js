@@ -7,8 +7,9 @@ openerp.fix_o2m_onchange = function(instance) {
     instance.web.BufferedDataSet.include({
         create: function(data, options) {
             var res = this._super.apply(this, arguments);
-            // this.trigger('dataset_changed', data, options);
-            this.o2m.trigger('created_value');
+            if(!_.isEmpty(this.o2m)){
+                this.o2m.trigger('created_value');
+            }
             return res;
         }
     });
