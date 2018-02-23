@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Fix Button Retry Save",
-    'summary': "",
-    'description': """""",
+    'summary': """Created to tackle form save issues reported here at: https://redmine.kjellberg-erp.de/issues/5348""",
+    'description': """
+The fix consist on clean dirty fields on form save to prevent that simultaneous save calls triggered by others actions
+like buttons click for print get o2m record lines get duplicated on write
+    """,
     'author': "Axel Mendoza",
     'email': 'aekroft@gmail.com',
     'license': "AGPL-3",
